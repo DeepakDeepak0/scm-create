@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html  lang="en" th:fragment="parent(content,title,script)" xmlns=th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-th-replace="${title}">SCM</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+    <link rel="stylesheet" data-th-href="@{'/css/style.css'}">
+
+    <!-- flow bite component -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 dark:text-white">
+    <!-- common header -->
+
+    <!-- THis is user loggedin : navbar -->
+    <div th:if="${loggedInUser}">
+        <div data-th-replace="~{user/user_navbar::user-navbar}"></div>
+    </div>
+
+
+    <!-- This is user notLoggedin : navbar -->
+    <div th:unless="${loggedInUser}">
+        <div data-th-replace="~{navbar :: navbar}"></div>
+    </div>
+
+    <!-- <div data-th-replace="~{navbar :: navbar}"></div> -->
+
+
+    <!-- main content -->
+     <!-- margin of content is setted here -->
+    <div class="p-4 mt-24">  
+        <section data-th-replace="${content}"></section>
+    </div>
+
+    <!-- common footer -->
+    <!-- <footer class="p-4">
+        Footer: Learn Code with Deepak
+    </footer> -->
+
+   <!-- Footer Section -->
+
+   <div class=" bottom-1 text-center  bg-[#14213d] text-[#E5E5E5] text-xl px-7 py-4 mt-24 lg:px-20 lg:mt-20 flex justify-center items-center gap-2">
+    <p> Made With</p> 
+    <i class="fa-solid fa-heart"></i>
+    <p>Deepak Maurya</p>
+     </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script data-th-src="@{'/js/script.js'}"></script>
+    <th:block data-th-replace="${script}"></th:block>
+
+</body>
+</html>

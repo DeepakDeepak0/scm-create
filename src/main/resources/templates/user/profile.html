@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{:: #content}, ~{:: title}, ~{:: script})}">
+<head>
+    <title data-th-text="Welcome + ' ' + ${loggedInUser.name}"></title>
+</head>
+<body>
+
+    <div id="content">
+
+        <!-- sidebar -->
+        <!-- user is logged in : sidebar -->
+        <div th:if="${loggedInUser}">
+            <div data-th-replace="~{user/sidebar::sidebar}">
+
+            </div>
+        </div>
+        
+       <div class="sm:pl-64 pt-20" >
+        <div class="flex items-center justify-center  flex-col">
+          <!--  profie card -->
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-2xl w-full ">
+            <div class="flex flex-col items-center">
+                <img onerror="this.onerror==null; this.src='https://flowbite.com/docs/images/logo.svg'"
+ data-th-src="@{${loggedInUser.profilePic}}" alt="Profile Photo" class="w-44 h-44 rounded-full shadow object-cover mb-4  ring-1 ring-white border hover:shadow-xl hover:scale-105 transition duration-500 transform hover:ring-0 ">
+                <h2 class="text-2xl font-semibold mb-2" data-th-text=${loggedInUser.name}></h2>
+                
+                <div class="p-1">
+
+                    <div class="flex space-x-1">
+                    <span>Email :</span>
+                <p class="text-gray-400 mb-2" data-th-text="${loggedInUser.email}">user.email@example.com</p>
+                </div>
+                
+                <div class="flex space-x-1">
+                    <span>Phone :</span>
+                    <p class="text-gray-400 mb-2" data-th-text="${loggedInUser.phoneNumber!=null ? loggedInUser.phoneNumber : 'Not Available'}" >123-456-7890</p>
+                </div>
+                
+                <div class="flex space-x-1">
+                    <span>About :</span>
+                    <p class="text-gray-400 mb-4 text-center" data-th-text="${loggedInUser.about}">About the user...</p>
+                </div>
+
+                </div>
+
+                <div class="w-full flex justify-between">
+                    <p class="text-sm ">Email Verified: <span class="font-medium text-gray-500" id="email-verified" data-th-text="${loggedInUser.emailVerified ? 'YES':'NO'}">No</span></p>
+                    <p class="text-sm ">Phone Verified: <span class="font-medium text-gray-500" id="phone-verified" data-th-text="${loggedInUser.phoneVerified ? 'YES':'NO'}">No</span></p>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+    
+    <script>
+        console.log("Profile page");
+    </script>
+</body>
+</html>

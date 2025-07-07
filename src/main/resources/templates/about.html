@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{:: #content}, ~{:: title}, ~{:: script})}">
+<head>
+    <title>About Page</title>
+</head>
+<body>
+
+    <div id="content">
+        <!-- About Page for Smart Contact Manager -->
+<section class="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 px-6 py-12">
+  <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+    <!-- Left Section - Text Content -->
+    <div class="flex-1 animate-fadeInUp space-y-6">
+      <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl">
+        About <span class="text-blue-600 dark:text-blue-400">Smart Contact Manager</span>
+      </h2>
+      <p class="text-lg leading-relaxed">
+        Smart Contact Manager is a secure, easy-to-use web app designed to help you manage your personal and professional contacts in one place. Built with the latest technologies, it offers a clean interface, powerful features, and fast performance.
+      </p>
+      <ul class="space-y-3">
+        <li class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          Contact grouping, tagging & search
+        </li>
+        <li class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          Secure authentication & data encryption
+        </li>
+        <li class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          Intuitive dashboard & user management
+        </li>
+      </ul>
+      <a href="/about" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl shadow hover:bg-blue-700 transition-all duration-300">
+        About
+      </a>
+    </div>
+
+    <!-- Right Section - Image or Illustration -->
+    <div class="flex-1">
+      <img  data-th-src="@{'/images/image1.png'}"
+         alt="Smart Contact Manager Illustration" class="w-full max-w-md mx-auto animate-fadeIn" />
+    </div>
+  </div>
+</section>
+
+<!-- Tailwind Animations -->
+<style>
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in forwards;
+}
+</style>
+
+    </div>
+    
+    <script>
+        console.log("about page");
+    </script>
+</body>
+</html>

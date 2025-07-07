@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base :: parent(~{:: #content}, ~{:: title}, ~{:: script})}"
+>
+  <head>
+    <title
+      data-th-text="Welcome + ' ' + ${loggedInUser.name} + 'Dashboard'"
+    ></title>
+  </head>
+  <body>
+    <div id="content">
+      <!-- sidebar -->
+      <!-- user is logged in : sidebar -->
+      <div th:if="${loggedInUser}">
+        <div data-th-replace="~{user/sidebar::sidebar}"></div>
+      </div>
+
+      <div class="sm:pl-64 pt-0">
+        <div class="flex justify-center flex-col items-center">
+          <h1 class="text-2xl sm:text-4xl">Welcome to Dashboard page</h1>
+          <p class="text-gray-400">Quickly manage Contacts</p>
+        </div>
+
+        <!-- Dashboard Container -->
+        <div class="min-h-screen p-6 md:p-10">
+          <!-- Header -->
+          <div class="mb-6">
+            <h1 class="text-xl font-bold">Dashboard</h1>
+            <p class="text-gray-500 mt-1">
+              Welcome back,
+              <span
+                class="text-gray-400"
+                data-th-text="${loggedInUser.name}"
+              ></span>
+              👋
+            </p>
+          </div>
+
+          <!-- Grid Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Total Contacts -->
+            <div class="bg-white shadow-xl rounded-2xl p-6 dark:bg-gray-800">
+              <h2 class="text-lg font-semibold text-gray-500">
+                Total Contacts
+              </h2>
+              <p
+                class="mt-4 text-4xl font-bold text-blue-600"
+                data-th-text="${loggedInUser.contact.size()}"
+              >
+                128
+              </p>
+              <p class="text-sm text-gray-500 mt-2">As of today</p>
+            </div>
+
+            <!-- Recently Added -->
+            <div class="bg-white shadow-xl rounded-2xl p-6 dark:bg-gray-800">
+              <h2 class="text-lg font-semibold text-gray-500">
+                Recently Added
+              </h2>
+              <ul class="mt-4 space-y-2">
+                <li class="text-gray-600">• John Doe</li>
+                <li class="text-gray-600">• Jane Smith</li>
+                <li class="text-gray-600">• Akash Mehra</li>
+              </ul>
+              <a href="#" class="text-blue-500 text-sm mt-3 inline-block"
+                >View All</a
+              >
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="bg-white shadow-xl rounded-2xl p-6 dark:bg-gray-800">
+              <h2 class="text-lg font-semibold text-gray-500">Quick Actions</h2>
+              <div class="flex flex-col gap-3 mt-4">
+                <p class="text-gray-600">Manage Contacts</p>
+                <p class="text-gray-600">Import Contacts</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Summary Table -->
+          <div
+            class="bg-white shadow-xl rounded-2xl mt-10 p-6 dark:bg-gray-800"
+          >
+            <h2 class="text-xl font-semibold text-gray-500 mb-4">
+              Contacts Summary
+            </h2>
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50 dark:bg-gray-900">
+                  <tr>
+                    <th
+                      class="text-left px-4 py-2 text-sm font-medium text-gray-400"
+                    >
+                      Name
+                    </th>
+                    <th
+                      class="text-left px-4 py-2 text-sm font-medium text-gray-400"
+                    >
+                      Email
+                    </th>
+                    <th
+                      class="text-left px-4 py-2 text-sm font-medium text-gray-400"
+                    >
+                      Phone
+                    </th>
+                    <th
+                      class="text-left px-4 py-2 text-sm font-medium text-gray-400"
+                    >
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr>
+                    <td class="px-4 py-3">John Doe</td>
+                    <td class="px-4 py-3">john@example.com</td>
+                    <td class="px-4 py-3">+91 9876543210</td>
+                    <td class="px-4 py-3">
+                      <button class="text-blue-500 hover:underline">
+                        View
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Add more rows dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      console.log("Dashboard page");
+    </script>
+  </body>
+</html>

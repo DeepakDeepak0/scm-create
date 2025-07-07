@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
+>
+<head>
+  <title>Home page</title>
+</head>
+<body>
+  <div id="content">
+    <!-- Home Page for Smart Contact Manager -->
+<section class="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white px-6 py-16">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+    
+    <!-- Left Side - Text Content -->
+    <div class="space-y-6 animate-fadeInLeft">
+      <h1 class="text-5xl font-extrabold leading-tight">
+        Smartly Manage Your <span class="text-blue-600 dark:text-blue-400">Contacts</span>
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl">
+        Smart Contact Manager helps you organize, access, and secure all your contacts with ease and efficiency — accessible anywhere, anytime.
+      </p>
+
+      <div class="flex gap-4">
+        <a href="/register" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition">
+          Get Started
+        </a>
+        <a href="/about" class="px-6 py-3 border border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-lg transition">
+          Learn More
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Side - Illustration or Hero Image -->
+    <div class="animate-fadeInRight">
+      <img data-th-src="@{'/images/image1.png'}" alt="Contact Manager" class="w-full max-w-md mx-auto drop-shadow-2xl">
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="bg-gray-50 dark:bg-gray-800 py-20 px-6">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Why Choose Smart Contact Manager?</h2>
+    <p class="text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+      Designed to simplify how you manage contacts, reminders, and relationships. Here's what makes it smart.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
+      <!-- Feature 1 -->
+      <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2 text-blue-600">Secure & Private</h3>
+        <p class="text-gray-600 dark:text-gray-300">End-to-end encryption and secure cloud storage keeps your data safe and private.</p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2 text-green-600">Organized Dashboard</h3>
+        <p class="text-gray-600 dark:text-gray-300">Manage contacts easily with tags, groups, notes, and filters in one beautiful dashboard.</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2 text-purple-600">Reminders & Notifications</h3>
+        <p class="text-gray-600 dark:text-gray-300">Never forget an important connection. Set reminders and get notified when it matters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Call to Action -->
+<section class="bg-blue-600 text-white py-14 px-6 text-center">
+  <h3 class="text-3xl font-semibold mb-4">Start Managing Contacts the Smart Way</h3>
+  <p class="mb-6">Join thousands of users who trust Smart Contact Manager every day.</p>
+  <a href="/register" class="bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition">
+    Create Your Free Account
+  </a>
+</section>
+
+<!-- Animations -->
+<style>
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.animate-fadeInLeft {
+  animation: fadeInLeft 1s ease-out both;
+}
+.animate-fadeInRight {
+  animation: fadeInRight 1s ease-out both;
+}
+</style>
+
+  </div>
+<script>
+  console.log("Home page");
+</script>
+</body>
+</html>

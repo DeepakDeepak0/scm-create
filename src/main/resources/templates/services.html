@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{:: #content}, ~{:: title}, ~{:: script})}">
+<head> 
+    <title>services Page</title>
+</head>
+<body>
+
+    <div id="content">
+        <!-- Services Page for Smart Contact Manager -->
+<section class="min-h-screen bg-gray-50 dark:bg-gray-900 py-16 px-6 text-gray-800 dark:text-gray-100">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-4xl font-extrabold mb-4">Our <span class="text-blue-600 dark:text-blue-400">Services</span></h2>
+    <p class="max-w-2xl mx-auto mb-12 text-lg text-gray-600 dark:text-gray-300">
+      We offer a powerful set of tools to manage your contacts efficiently, securely, and effortlessly.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- Service Card 1 -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition-all duration-300 p-8 text-left hover:scale-105 animate-fadeInUp">
+        <div class="text-blue-600 dark:text-blue-400 mb-4">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M8 7V3M16 7V3M4 11h16M4 19h16M4 15h16" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Contact Management</h3>
+        <p class="text-gray-600 dark:text-gray-300">Add, edit, group, and organize contacts with tags and categories effortlessly.</p>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition-all duration-300 p-8 text-left hover:scale-105 animate-fadeInUp delay-100">
+        <div class="text-green-600 dark:text-green-400 mb-4">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 11c0-1.1-.9-2-2-2s-2 .9-2 2c0 1.11.89 2 2 2s2-.89 2-2zM20 11c0-1.1-.9-2-2-2s-2 .9-2 2c0 1.11.89 2 2 2s2-.89 2-2zM4 11c0-1.1-.9-2-2-2s-2 .9-2 2c0 1.11.89 2 2 2s2-.89 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Search & Filters</h3>
+        <p class="text-gray-600 dark:text-gray-300">Quickly find contacts using smart search, advanced filters, and tags.</p>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition-all duration-300 p-8 text-left hover:scale-105 animate-fadeInUp delay-200">
+        <div class="text-purple-600 dark:text-purple-400 mb-4">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 8c1.1 0 2-.9 2-2S13.1 4 12 4s-2 .9-2 2 .9 2 2 2zM2 20h20v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">User Accounts</h3>
+        <p class="text-gray-600 dark:text-gray-300">Secure registration, login, and profile features to personalize your experience.</p>
+      </div>
+
+      <!-- Add more cards here as needed -->
+    </div>
+  </div>
+</section>
+
+<!-- Tailwind Animations -->
+<style>
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out both;
+}
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+</style>
+
+    </div>
+
+    <script>
+        console.log("services page");
+    </script>
+    
+</body>
+</html>
